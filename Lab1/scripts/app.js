@@ -1,3 +1,11 @@
+/* 
+ * File: app.js
+ * Author: Jackson lyn
+ * Date: 02/03/2023
+ * Description: One of the javascript pages for my website (about page)
+ */
+
+// test js
 console.log("JS Script set up")
 
 
