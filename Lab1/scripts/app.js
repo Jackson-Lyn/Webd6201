@@ -18,3 +18,8 @@ let submitButton = document.getElementById('submit-button');
 if (submitButton){
     submitButton.addEventListener('click',timedRedirect, false)
 }
+
+
+
+
+
