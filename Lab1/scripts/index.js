@@ -33,4 +33,4 @@ navbar.insertBefore(newItem, aboutUsItem);
 
 //Background image
 const element = document.getElementById("body");
-element.style.backgroundImage = "url('images/BG.jfif')";
+element.style.backgroundImage = "url('images/BG2.jfif')";
