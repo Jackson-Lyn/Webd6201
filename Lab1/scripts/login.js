@@ -1,6 +1,6 @@
 $(document).ready(() => {
     // Get references to the HTML elements
-    const $navbarText = $(".navbar-text");
+    const $navbarText = $(".navbar-nav");
   
     // Add event listener for form submission
     $("form").submit((event) => {
