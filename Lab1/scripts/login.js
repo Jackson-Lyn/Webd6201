@@ -1,21 +1,21 @@
-$(document).ready(() => {
-    // Get references to the HTML elements
-    const $navbarText = $(".navbar-nav");
+/* 
+ * File: login.js
+ * Author: Jackson lyn
+ * Date: 02/03/2023
+ * Description: One of the javascript pages for my website
+ */
+
+$(document).ready(function() {
+    $('form').submit(function(event) {
+      event.preventDefault(); // prevent the form from submitting
+      
+      // get the username input value
+      var username = $('#inputUsername').val();
   
-    // Add event listener for form submission
-    $("form").submit((event) => {
-      event.preventDefault(); // Prevent default form submission behavior
+      // create the new navbar item with the username
+      var navbarItem = '<li class="nav-item navbar-text">' + username + '</li>';
   
-      const username = $("#inputUsername").val();
-      const password = $("#inputPassword").val();
-  
-      // Validate username and password
-      if (username === "admin" && password === "password") {
-        // Insert username into the navbar
-        $navbarText.html(`Contact Us | ${username} | <a href="#">Logout</a>`);
-      } else {
-        // Show error message
-        alert("Invalid username or password.");
-      }
+      // insert the new navbar item between the Contact Us and Login/Logout links (4th element)
+      $('nav').find('.nav-item').eq(3).after(navbarItem);
     });
   });
