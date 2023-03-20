@@ -1,60 +1,69 @@
+/* 
+ * File: blog.js
+ * Author: Jackson lyn
+ * Date: 03/19/2023
+ * Description: Javascript for my blog page
+ */
+
+
+// check if js is loaded
 console.log("Js check")
 
 
-// Define a function to display each post
+// Function to display each post
 function displayPost(post) {
   // Create a div element for the post
   const Card = document.createElement("div");
   Card.classList.add("card", "col-lg-4", "col-md-6", "col-sm-12");
 
-  // Add the post's image to the card
+  // for the picture
   const imageElement = document.createElement("img");
   imageElement.src = post.imageURL;
   imageElement.alt = post.title;
   imageElement.classList.add("card-img-top");
   Card.appendChild(imageElement);
 
-  // Add the post's content to the card
+  // for the content
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
   Card.appendChild(cardBody);
 
-  // Add the post's title to the card
+  // for the title
   const titleElement = document.createElement("h5");
   titleElement.textContent = post.title;
   titleElement.classList.add("card-title");
   cardBody.appendChild(titleElement);
 
-  // Add the post's date to the card
+  // For the date
   const dateElement = document.createElement("p");
   dateElement.textContent = post.date;
   dateElement.classList.add("card-text");
   cardBody.appendChild(dateElement);
 
-  // Add the post's author to the card
+  // For the author
   const authorElement = document.createElement("p");
-  authorElement.textContent = `By ${post.author}`;
+  authorElement.textContent = post.author;
   authorElement.classList.add("card-text");
   cardBody.appendChild(authorElement);
 
-  // Add the post's content to the card
+  // the post's content
   const contentElement = document.createElement("p");
   contentElement.textContent = post.content;
   contentElement.classList.add("card-text");
   cardBody.appendChild(contentElement);
 
-  // Add the post's category to the card
+  // the post's category
   const categoryElement = document.createElement("p");
   categoryElement.textContent = post.category;
   categoryElement.classList.add("card-text");
   cardBody.appendChild(categoryElement);
 
-  // Add the post card to the container on the page
+  // adds the post card to the container on the page
   const container = document.getElementById("blog-container");
   container.appendChild(Card);
 }
 
-// Define a function to fetch the posts and display them on the page
+//function to fetch the posts and display them on the page
 async function getAndDisplayPosts() {
   const response = await fetch(
     "https://pixabay.com/api/?key=34297873-b92fb9416e0cead9858e0d0f0&q=beautiful+landscape&image_type=photo&per_page=20"
@@ -70,6 +79,6 @@ async function getAndDisplayPosts() {
   posts.forEach(displayPost);
 }
 
-// Call the function to get and display the posts
+// calling the function
 getAndDisplayPosts();
 
